@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Restaurant Bella Italia</title>
-    <link rel="stylesheet" href="index.css">
+    <!-- Link naar externe CSS -->
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 </head>
 
 <body>

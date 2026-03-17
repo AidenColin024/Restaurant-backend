@@ -6,6 +6,6 @@ abstract class Controller
 {
     public function index()
     {
-        return 'restaurant';
+        return 'home';
     }
 }

@@ -6,4 +6,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Hello', 'App\Http\Controllers\TestController@index');
+Route::get('/home', 'App\Http\Controllers\TestController@index');
