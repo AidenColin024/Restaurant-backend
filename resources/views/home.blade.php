@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Restaurant Bella Italia</title>
-    <!-- Link naar externe CSS -->
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 </head>
 
@@ -11,6 +10,7 @@
 
 <header>
     <h1>Restaurant Bella Italia</h1>
+    <img src="{{ asset('images/ChatGPT Image 17 mrt 2026, 11_39_31.png') }}" alt="Logo" class="logo">
     <nav>
         <ul>
             <li><a href="#">Home</a></li>

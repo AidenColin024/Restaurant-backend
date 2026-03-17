@@ -16,6 +16,12 @@ nav ul {
     gap: 20px;
 }
 
+.logo {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
 .hero {
     height: 300px;
     background: url('../images/restaurant.jpg') center/cover;
