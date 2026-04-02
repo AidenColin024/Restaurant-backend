@@ -1,24 +1,33 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DishController
+use App\Http\Controllers\DishController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/contact', [MessageController::class, 'create'])->name('contact');
-
-Route::post('/contact', [MessageController::class, 'store'])->name('contact.store');
-
-Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
-
+// Home pagina
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
+// Menu (CRUD)
+Route::resource('menu', DishController::class);
+
+// Contactformulier
+Route::get('/contact', [MessageController::class, 'create'])->name('contact');
+Route::post('/contact', [MessageController::class, 'store'])->name('contact.store');
+
+// Admin: berichten bekijken (ALLEEN INGelogd)
+Route::get('/messages', [MessageController::class, 'index'])
+    ->middleware('auth')
+    ->name('messages.index');
+
+// Dashboard (Breeze)
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Profiel (Breeze)
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
