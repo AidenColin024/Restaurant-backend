@@ -5,57 +5,59 @@
 <!-- HERO -->
 <section class="hero">
     <div class="hero-content">
+    <div class="hero-text">
         <h2>Welkom bij Bella Italia</h2>
-        <p>Geniet van de beste Italiaanse gerechten</p>
-
+        <p>Geniet van de echte Italiaanse keuken</p>
+    </div>
         <!-- HERO IMAGE -->
         <img src="{{ asset('images/l-intro-1643403830.jpg') }}" alt="Hero afbeelding" class="hero-img">
     </div>
 </section>
 
-<!-- OVER ONS -->
 <section class="about">
-    <h2>Over ons</h2>
     <div class="about-container">
-
         <div class="about-text">
+            <h2>Over ons</h2>
             <p>
-                Bella Italia is een traditioneel Italiaans restaurant waar kwaliteit en smaak centraal staan.
+                Welkom bij Bella Italia, een plek waar de authentieke Italiaanse keuken tot leven komt.
+                Onze gerechten worden bereid met verse ingrediënten en traditionele recepten die
+                generaties lang zijn doorgegeven.
             </p>
-        </div>
 
-        <!-- ABOUT IMAGE -->
-        <div class="about-image">
-            <img src="{{ asset('images/Italian-Restaurant-Design-Creating-an-Inviting-Ambiance.png') }}" alt="Restaurant afbeelding">
+            <p>
+                Of je nu komt voor een romantisch diner, een gezellige avond met vrienden of een
+                familiebijeenkomst — bij ons staat gastvrijheid altijd centraal.
+            </p>
+
+            <p>
+                Laat je verrassen door onze heerlijke pasta’s, knapperige pizza’s en verfijnde wijnen
+                rechtstreeks uit Italië.
+            </p>
         </div>
 
     </div>
 </section>
 
-<!-- MENU PREVIEW -->
 <section class="menu-preview">
     <h2>Populaire gerechten</h2>
 
     <div class="menu-grid">
+        @forelse($dishes as $dish)
+            <div class="menu-item">
+                
+                <!-- IMAGE -->
+                <img src="{{ $dish->image ?? '' }}" alt="{{ $dish->name }}">
 
-        <div class="menu-item">
-            <img src="" alt="Pizza">
-            <h3>Pizza Margherita</h3>
-            <p>Klassieke pizza met tomaat en mozzarella</p>
-        </div>
+                <!-- NAAM -->
+                <h3>{{ $dish->name }}</h3>
 
-        <div class="menu-item">
-            <img src="" alt="Pasta">
-            <h3>Pasta Carbonara</h3>
-            <p>Romige saus met spek en kaas</p>
-        </div>
+                <!-- PRIJS -->
+                <p>€{{ $dish->price }}</p>
 
-        <div class="menu-item">
-            <img src="" alt="Lasagne">
-            <h3>Lasagne</h3>
-            <p>Laagjes pasta met gehakt en saus</p>
-        </div>
-
+            </div>
+        @empty
+            <p>Er zijn nog geen gerechten toegevoegd.</p>
+        @endforelse
     </div>
 </section>
 
