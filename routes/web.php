@@ -4,10 +4,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Dish;
 
-// Home pagina
 Route::get('/', function () {
-    return view('home');
+    $dishes = Dish::latest()->take(6)->get(); // pak 6 gerechten
+    return view('home', compact('dishes'));
 });
 
 // Menu (CRUD)
