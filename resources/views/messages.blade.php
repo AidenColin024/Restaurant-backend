@@ -1,14 +1,33 @@
 @extends('layout')
 
 @section('content')
-<h1>Berichten</h1>
 
-@foreach($messages as $message)
-    <div>
-        <h3>{{ $message->name }}</h3>
-        <p>{{ $message->email }}</p>
-        <p>{{ $message->message }}</p>
+<div class="menu-section">
+    <div class="menu-header">
+        <div>
+            <span class="section-label">Ontvangen berichten</span>
+            <h1>Berichten</h1>
+        </div>
     </div>
-@endforeach
+
+    @forelse($messages as $message)
+        <div class="dish-row">
+            <div class="dish-info">
+                <h2>{{ $message->name }}</h2>
+                <p class="description">{{ $message->email }}</p>
+                <p style="margin-top: 0.6rem; color: var(--text); font-size: 0.95rem; line-height: 1.7;">
+                    {{ $message->message }}
+                </p>
+                <p style="margin-top: 0.5rem; font-size: 0.78rem; color: var(--warm-mid); letter-spacing: 0.03em;">
+                    {{ $message->created_at->format('d-m-Y \o\m H:i') }}
+                </p>
+            </div>
+        </div>
+    @empty
+        <div class="empty-state">
+            <p>Er zijn nog geen berichten ontvangen.</p>
+        </div>
+    @endforelse
+</div>
 
 @endsection
