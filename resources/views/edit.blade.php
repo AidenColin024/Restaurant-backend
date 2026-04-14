@@ -14,18 +14,17 @@
 
             <div class="form-group">
                 <label for="name">Naam</label>
-                <input type="text" id="name" name="name" value="{{ old('name', $dish->name) }}" required>
+                <input type="text" id="name" name="name" value="{{ $dish->name }}">
             </div>
 
             <div class="form-group">
                 <label for="description">Beschrijving</label>
-                <textarea id="description" name="description" required>{{ old('description', $dish->description) }}</textarea>
+                <textarea id="description" name="description">{{ $dish->description }}</textarea>
             </div>
 
             <div class="form-group">
                 <label for="price">Prijs (€)</label>
-                <input type="number" id="price" name="price" step="0.01" min="0"
-                    value="{{ old('price', $dish->price) }}" required>
+                <input type="text" id="price" name="price" value="{{ $dish->price }}">
             </div>
 
             <div class="form-actions">

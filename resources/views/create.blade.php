@@ -13,18 +13,17 @@
 
             <div class="form-group">
                 <label for="name">Naam</label>
-                <input type="text" id="name" name="name" placeholder="bijv. Spaghetti Carbonara" value="{{ old('name') }}" required>
+                <input type="text" id="name" name="name" placeholder="bijv. Spaghetti Carbonara">
             </div>
 
             <div class="form-group">
                 <label for="description">Beschrijving</label>
-                <textarea id="description" name="description" placeholder="Korte omschrijving van het gerecht...">{{ old('description') }}</textarea>
+                <textarea id="description" name="description" placeholder="Korte omschrijving van het gerecht..."></textarea>
             </div>
 
             <div class="form-group">
                 <label for="price">Prijs (€)</label>
-                <input type="number" id="price" name="price" step="0.01" min="0"
-                    placeholder="0.00" value="{{ old('price') }}" required>
+                <input type="text" id="price" name="price" placeholder="0.00">
             </div>
 
             <div class="form-actions">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Bella Italia</title>
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ url('css/home.css') }}">
 </head>
 
 <body>
@@ -12,7 +12,7 @@
 <header>
     <div class="header-container">
         <div class="header-brand">
-            <img src="{{ asset('images/ChatGPT Image 17 mrt 2026, 11_39_31.png') }}" alt="Logo" class="logo">
+            <img src="{{ url('images/ChatGPT Image 17 mrt 2026, 11_39_31.png') }}" alt="Logo" class="logo">
             <h1>Restaurant Bella Italia</h1>
         </div>
         <nav>

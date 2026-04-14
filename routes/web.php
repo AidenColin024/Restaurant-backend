@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Dish;
 
 Route::get('/', function () {
-    $dishes = Dish::latest()->take(6)->get(); // pak 6 gerechten
+    $dishes = Dish::all();
     return view('home', compact('dishes'));
 });
 
@@ -18,7 +18,7 @@ Route::resource('menu', DishController::class);
 Route::get('/contact', [MessageController::class, 'create'])->name('contact');
 Route::post('/contact', [MessageController::class, 'store'])->name('contact.store');
 
-// Admin: berichten bekijken (ALLEEN INGelogd)
+// Admin: berichten bekijken (ALLEEN ingelogd)
 Route::get('/messages', [MessageController::class, 'index'])
     ->middleware('auth')
     ->name('messages.index');

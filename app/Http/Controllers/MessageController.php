@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-        // Form tonen
+    // Formulier tonen
     public function create()
     {
         return view('contact');
@@ -18,7 +18,7 @@ class MessageController extends Controller
     {
         Message::create($request->all());
 
-        return redirect()->back()->with('success', 'Bericht verzonden!');
+        return redirect()->route('contact');
     }
 
     // Admin: alle berichten bekijken
@@ -27,5 +27,4 @@ class MessageController extends Controller
         $messages = Message::all();
         return view('messages', compact('messages'));
     }
-
 }
